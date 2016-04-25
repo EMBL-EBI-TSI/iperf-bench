@@ -34,7 +34,7 @@ In this case, `IPERF_ARGS` is used to ask IPerf to:
   - `-D`: enter daemon mode after lunch
 
 Information on how to insert this script into cron can be found in the script itself. For reference, executing on a bash:
-<p style="text-align: center;">`(crontab -l ; echo "*/1 * * * * ~/iperf_server.py") | crontab  - `</p>
+`(crontab -l ; echo "*/1 * * * * ~/iperf_server.py") | crontab  - `
 
 would force cron to execute the script every minute, expecting the script to be in the user home (that's the default path for cron).
 
@@ -56,6 +56,6 @@ Also in this case, global variables can be tuned to reflect different needs:
                                               # be passed to IPerf
 
 Each result will be timestamped, to avoid filename collisions. Again, adding this script to cron is quite easy:
-<p style="text-align: center;">`(crontab -l ; echo "*/5 * * * * ~/iperf_client.py") | crontab  - `</p>
+`(crontab -l ; echo "*/5 * * * * ~/iperf_client.py") | crontab  - `
 
 With that invocation, cron will execute the test every five minutes, and the script will take care of storing the (JSON) results in the given folder. For sake of simplicity, the same timestamp will be used for both tests (client to server, server to client) even if there's roughly an offset of one minute between them. The real time of invocation can be extracted by the JSON logs directly, if needed.
