@@ -9,7 +9,7 @@
 # (crontab -l ; echo "*/5 * * * * ~/iperf_client.py") | crontab -
 # to add the crontab job to the server. Runs every 5 minutes.
 # Keep in mind that if you're not using the default python env, you should come
-# with something like
+# up with something like
 # (crontab -l ; echo "*/5 * * * * /usr/local/bin/python2.7 ~/iperf_client.py") | crontab -
 # to make it work.
 ###
